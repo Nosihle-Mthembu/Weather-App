@@ -1,6 +1,11 @@
 import React from 'react';
 
 const WeatherInfo = ({ weather }) => {
+  // Check if the weather object is available and has the necessary properties
+  if (!weather || !weather.name || !weather.main) {
+    return <p>Weather data is unavailable.</p>;
+  }
+
   return (
     <div>
       <h1>{weather.name}</h1>
@@ -13,3 +18,4 @@ const WeatherInfo = ({ weather }) => {
 };
 
 export default WeatherInfo;
+
